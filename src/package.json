@@ -1,0 +1,21 @@
+{
+  "name": "marvel-skill",
+  "version": "1.0.0",
+  "description": "Skill to query marvel api data",
+  "main": "index.js",
+  "scripts": {
+    "test": "lambda-local -f index.js -e testEvent.json"
+  },
+  "keywords": [
+    "marvel",
+    "alexa",
+    "lamda",
+    "nodjs",
+    "superhero"
+  ],
+  "author": "walter bogaardt",
+  "license": "MIT",
+  "dependencies": {
+    "alexa-sdk": "^1.0.12"
+  }
+}
