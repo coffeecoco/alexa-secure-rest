@@ -40,7 +40,13 @@ lambda-local -f index.js -e testEvent.json
 npm test
 ```
 
+Either case these two commands simulates an alexa skills call to the AWS Lambda function. The environment file is called testEvent.json.
+
+### Deploy to AWS Lambda
+Once you have built and tested your lambda function locally you can deploy it to AWS lambda. Go to [AWS Console](https://console.aws.amazon.com). Go to the AWS Lambda service to create a function. The alexa skills package dependencies and core NodeJS packages are already in a basic template in AWS Lambda. All you really need to do is copy the `index.js` file into the AWS Lambda Code editor. 
+
+
 ### References
 
-[AWS NodeJS SDK](https://github.com/alexa/alexa-skills-kit-sdk-for-nodejs) - AWS NodeJs sdk
-[Lambda-local](https://github.com/ashiina/lambda-local) - AWS lightweight serverless local lambda testing
+* [AWS NodeJS SDK](https://github.com/alexa/alexa-skills-kit-sdk-for-nodejs) - AWS NodeJs sdk
+* [Lambda-local](https://github.com/ashiina/lambda-local) - AWS lightweight serverless local lambda testing
