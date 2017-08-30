@@ -17,7 +17,7 @@ const languageStrings = {
             SKILL_NAME: 'Marvel Heros',
             WELCOME_MESSAGE: "You can ask me for an marvel hero name. Who will it be?",
             GET_FACT_MESSAGE: "You asked about the character, ",
-            NOT_FOUND_MESSAGE: "I did not find a hero by that name.",
+            NOT_FOUND_MESSAGE: "I did any further description of this character.",
             HELP_MESSAGE: 'You can ask me for a marvel hero that starts with a name?',
             HELP_REPROMPT: 'Name a hero from marvel universe',
             STOP_MESSAGE: 'Goodbye!',
@@ -79,12 +79,16 @@ const handlers = {
                     if (i < numberOfResults) {
                         // Get the name and description JSON structure.
                         var name = responseData.data.results[i].name;
-                        description = responseData.data.results[i].description;
+                        var character_description = responseData.data.results[i].description;
+                        if(character_description) {
+                            description = character_description;
+                        }
+                        var comic = responseData.data.results[i].stories.available;
                         var index = i + 1;
 
-                        output += "The hero " + name+ ";";
+                        output += "I found" + name+ "; and appears in " +comic+" stories.";
                         cardContent += "Marvel Character: " + name+ ".\n";
-                        cardContent += description + ".\n\n";
+                        cardContent += "Appears in "+comic+" stories. \n Description: "+description + ".\n\n";
                     }
                 }
                 output += description;
