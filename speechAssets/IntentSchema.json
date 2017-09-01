@@ -15,14 +15,14 @@
     {
       "name": "getHeroIntent",
       "samples": [
-        "who is {hero}",
-        "what is {hero}",
-        "describe {hero}"
+        "who is {heroname}",
+        "what is {heroname}",
+        "describe {heroname}"
       ],
       "slots": [
         {
-          "name": "hero",
-          "type": "AMAZON.Person",
+          "name": "heroname",
+          "type": "AMAZON.FictionalCharacter",
           "samples": []
         }
       ]
