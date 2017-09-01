@@ -18,8 +18,8 @@
     "requestId": "amzn1.echo-api.request.[amzn1.ask.skill.7b792d4b-b27e-4e90-aebb-dc307aca0fc1]",
     "intent": {
       "slots": {
-        "hero": {
-          "name": "spider man",
+        "heroname": {
+          "name": "daredevil",
           "value": "daredevil"
         }
       },

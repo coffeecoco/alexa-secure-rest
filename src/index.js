@@ -17,9 +17,9 @@ const languageStrings = {
             SKILL_NAME: 'Marvel Heros',
             WELCOME_MESSAGE: "You can ask me for an marvel hero name. Who will it be?",
             GET_FACT_MESSAGE: "You asked about the character, ",
-            NOT_FOUND_MESSAGE: "I did any further description of this character.",
+            NOT_FOUND_MESSAGE: "I did not find any further description for this character.",
             HELP_MESSAGE: 'You can ask me for a marvel hero that starts with a name?',
-            HELP_REPROMPT: 'Name a hero from marvel universe',
+            HELP_REPROMPT: 'Name a hero from the marvel universe.',
             STOP_MESSAGE: 'Goodbye!',
         },
     },
@@ -54,15 +54,16 @@ const handlers = {
     'getHeroIntent': function () {
         var slotValue = '';
         var heroName =''
-        if(this.event.request.intent.slots.hero ) {
-            if (this.event.request.intent.slots.hero.value) {
-                slotValue = this.event.request.intent.slots.hero.value;
+        if(this.event.request.intent.slots.heroname ) {
+            if (this.event.request.intent.slots.heroname.value) {
+                slotValue = this.event.request.intent.slots.heroname.value;
                 heroName = encodeURI(slotValue);
                 console.log(' Got hero name from slot ' + slotValue);
             }
         }
         var introText = this.t('GET_FACT_MESSAGE') + slotValue + ". ";
         var description = this.t('NOT_FOUND_MESSAGE');
+        
         httpGet(heroName, function (response) {
 
             // Parse the response into a JSON object ready to be formatted.
